@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { SearchOrder } from "../features/order/SearchOrder"
 
 export const Header = () => {
   return (
@@ -6,6 +7,7 @@ export const Header = () => {
       <Link to="/">
         Fast React Pizza
       </Link>
+      <SearchOrder />
     </header>
   )
 }
