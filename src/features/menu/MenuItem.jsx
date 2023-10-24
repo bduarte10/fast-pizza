@@ -9,15 +9,15 @@ function MenuItem({ pizza }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    const newItem ={
-        pizzaId: id,
-        name: name,
-        quantity: 1,
-        unitPrice: unitPrice,
-        totalPrice: unitPrice * 1,
-      }
-      dispatch(addItem(newItem));
-    }
+    const newItem = {
+      pizzaId: id,
+      name: name,
+      quantity: 1,
+      unitPrice: unitPrice,
+      totalPrice: unitPrice * 1,
+    };
+    dispatch(addItem(newItem));
+  };
 
   return (
     <li className="flex gap-4 py-2">
@@ -40,7 +40,11 @@ function MenuItem({ pizza }) {
             </p>
           )}
 
-          {!soldOut && <Button type="small" onClick={handleAddToCart}>Add to cart</Button>}
+          {!soldOut && (
+            <Button type="small" onClick={handleAddToCart}>
+              Add to cart
+            </Button>
+          )}
         </div>
       </div>
     </li>
