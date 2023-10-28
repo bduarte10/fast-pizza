@@ -9,6 +9,7 @@ import CreateOrder, {
 } from './features/order/CreateOrder';
 import Order, { loader as orderLoader } from './features/order/Order';
 import AppLayout from './ui/AppLayout';
+import Favorites from './features/favorites';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/fav',
+        element: <Favorites />,
+        errorElement: <Error />,
       },
       {
         path: '/menu',

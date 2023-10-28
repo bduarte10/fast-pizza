@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SearchOrder from '../features/order/SearchOrder';
 import Username from '../features/user/Username';
+import { LucideHeart } from 'lucide-react';
 
 function Header() {
   return (
@@ -8,9 +9,13 @@ function Header() {
       <Link to="/" className="tracking-widest">
         Fast React Pizza Co.
       </Link>
-
       <SearchOrder />
-      <Username />
+      <div className="flex gap-3">
+        <Link to="/fav">
+          <LucideHeart size={20} />
+        </Link>
+        <Username />
+      </div>
     </header>
   );
 }

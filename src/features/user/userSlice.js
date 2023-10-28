@@ -26,7 +26,7 @@ async function fetchAddress() {
 import  { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  username: "",
+  username: JSON.parse(localStorage.getItem('username')) || "",
 }
 
 const userSlice = createSlice({
@@ -35,6 +35,7 @@ const userSlice = createSlice({
   reducers:{
     updateName(state, action){
       state.username = action.payload
+      localStorage.setItem('username', JSON.stringify(state.username))
     }
   }
 })
