@@ -20,7 +20,5 @@ const favSlice = createSlice({
 })
 
 export const { addToFavorites, removeFromFavorites } = favSlice.actions
-
 export default favSlice.reducer
-
 export const getFavorites = state => state.fav.favPizzas
