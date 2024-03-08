@@ -1,6 +1,6 @@
 # Fast Pizza Delivery
 
-Aolicação de delivery de pizza, criado para praticar gerenciamento de estado utilizando Redux
+Aplicação de delivery de pizza, criado para praticar gerenciamento de estado utilizando Redux
 
 # Fluxo de uso
 ![Captura de tela 2024-03-08 100110](https://github.com/bduarte10/fast-pizza/assets/76459023/40b62b2d-3f8f-4075-aed1-979059d4bf15)
