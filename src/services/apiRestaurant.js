@@ -244,8 +244,7 @@ const menu =  [
         "soldOut": false
     }
 ]
-  return menu;
-  // return data;
+  return menu.filter((pizza) => !pizza.soldOut);
 }
 
 export async function getOrder(id) {

@@ -12,6 +12,9 @@ import {
   removeFromFavorites,
 } from '../favorites/favSlice';
 import { useEffect } from 'react';
+import { CarFront } from 'lucide-react';
+import { ShoppingBasket } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 function MenuItem({ pizza }) {
   const [fav, setFav] = useState(false);
@@ -48,21 +51,21 @@ function MenuItem({ pizza }) {
   };
 
   return (
-    <li className="flex gap-4 py-2">
+    <li className="flex gap-4 p-2 border border-slate-300 rounded-lg">
       <img
         src={imageUrl}
         alt={name}
-        className={`h-24 ${soldOut ? 'opacity-70 grayscale' : ''}`}
+        className={`h-24 ${soldOut ? 'opacity-70 grayscale' : ''}, rounded-lg`}
       />
       <div className="flex grow flex-col pt-0.5">
         <div className="grid grid-cols-3 ">
           <div className="col-span-2">
-            <p className="font-medium">{name}</p>
-            <p className="text-sm capitalize italic text-stone-500">
+            <p className="font-medium text-sm">{name}</p>
+            <p className="text-xs capitalize italic text-stone-500">
               {ingredients.join(', ')}
             </p>
           </div>
-          <div className="flex items-start justify-end">
+          <div className="flex items-start justify-end mr-1">
             <Button type="base" onClick={handleFav}>
               <Heart
                 className="h-5 w-5 cursor-pointer select-none"
@@ -81,7 +84,7 @@ function MenuItem({ pizza }) {
           )}
           {!soldOut &&
             (isInCart ? (
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 ">
                 <UpdateItemQuantity
                   pizzaId={id}
                   currentQuantity={currentQuantity}
@@ -89,8 +92,8 @@ function MenuItem({ pizza }) {
                 <DeleteItem pizzaId={id} />
               </div>
             ) : (
-              <Button type="small" onClick={handleAddToCart}>
-                Add to cart
+              <Button type="round" onClick={handleAddToCart}>
+                +
               </Button>
             ))}
         </div>
